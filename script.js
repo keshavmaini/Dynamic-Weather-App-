@@ -1,6 +1,6 @@
 // --- Configuration & API Key ---
 const apiKey = "2389348877584f9aa3885504251708";
-const apiUrl = "http://api.weatherapi.com/v1/current.json";
+const apiUrl = "https://api.weatherapi.com/v1/current.json";
 
 // --- DOM Element Selections ---
 const searchInput = document.getElementById("location-input");
@@ -92,7 +92,7 @@ function displayWeatherData(data) {
 // --- Function to Get Location Suggestions (using WeatherAPI's search endpoint) ---
 async function getLocationSuggestions(query) {
     try {
-        const response = await fetch(`http://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${query}`);
+        const response = await fetch(`https://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${query}`);
         const data = await response.json();
         displayLocationSuggestions(data);
     } catch (error) {
@@ -159,3 +159,4 @@ searchInput.addEventListener("input", () => {
 
 // Optional: Initial call to display weather for a default city on page load
 // getWeatherData("London");
+

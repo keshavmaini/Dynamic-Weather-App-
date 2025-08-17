@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Weather Icons CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
+</head>
+<body>
+    <div class="background-wrapper"></div> <!-- New wrapper for dynamic backgrounds -->
+
+    <div class="weather-container">
+        <h1>Weather Forecast</h1>
+        <div class="search-box">
+            <input type="text" id="location-input" placeholder="Enter city name">
+            <button id="search-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+        </div>
+        <div id="location-suggestions"></div>
+        <div id="weather-info">
+            <h3 id="city-name"></h3>
+            <i id="weather-icon" class="wi"></i> <!-- Changed from img to i for font icon -->
+            <p id="temperature"></p>
+            <p id="description"></p>
+            <p id="humidity"></p>
+            <p id="wind-speed"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

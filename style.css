@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #222; /* Fallback background color */
+    color: black; /* Default text color */
+}
+
+.background-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.5s ease-in-out; /* Smooth transition for background changes */
+    z-index: -1;
+}
+
+/* Dynamic background styles (simplified examples) */
+.clear-bg {
+    background: linear-gradient(to top, #4facfe, #00f2fe);
+}
+
+.sunny-bg {
+    background: linear-gradient(to top, #FFD700, #FFA500);
+}
+
+.partly-cloudy-bg {
+    background: linear-gradient(to top, #7f8c8d, #bdc3c7);
+}
+
+.cloudy-bg {
+    background: linear-gradient(to top, #b0bec5, #78909c);
+}
+
+.rain-bg {
+    background: linear-gradient(to top, #3498db, #2c3e50);
+}
+
+.snow-bg {
+    background: linear-gradient(to top, #ffffff, #e0e0e0);
+}
+
+.thunderstorm-bg {
+    background: linear-gradient(to top, #34495e, #2c3e50);
+}
+
+.mist-fog-bg {
+    background: linear-gradient(to top, #95a5a6, #ecf0f1);
+}
+
+.default-bg {
+    background: linear-gradient(to top, #6a11cb, #2575fc);
+}
+
+/* Rain animation (example) */
+.rain-animation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg width="10" height="20" viewBox="0 0 10 20" xmlns="http://www.w3.org/2000/svg"><path fill="%23ffffff" d="M3 0c2 2 3 4 3 7s-1 5-3 5c-2 0-3-3-3-7s1-5 3-5z"/></svg>'); /* Raindrop SVG */
+    background-size: 10px 20px;
+    animation: rain 1s linear infinite;
+}
+
+@keyframes rain {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.weather-container {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#location-input {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 25px;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #000000;
+    width: 70%;
+    font-size: 1.1em;
+    outline: none;
+}
+
+#location-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#search-button {
+    padding: 12px;
+    background: linear-gradient(145deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+    background: linear-gradient(145deg, #0056b3, #007bff);
+}
+
+#location-suggestions {
+    margin-top: 10px;
+    text-align: left;
+    max-height: 150px;
+    overflow-y: auto;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.suggestion-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#weather-info {
+    margin-top: 30px;
+    display: none;
+}
+
+#city-name {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+#weather-icon {
+    font-size: 4em; /* Larger font icon */
+    margin: 15px auto;
+    display: block; /* Ensure it behaves like a block element for centering */
+}
+
+#temperature {
+    font-size: 2.8em;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+#description {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+#humidity,
+#wind-speed {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
